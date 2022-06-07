@@ -66,3 +66,28 @@ lista = [[55, 'Joao', 1.64], [66, 'Maria', 1.55], [77, 'José', 1.98]]
 # o for in pode colocar cada valor do array em uma variavel
 for indice, nome, altura in lista:
     print(f'"{nome}", com numero de registro "{indice}", tem altura {altura}m.')
+
+
+print('\n#####################################################')
+# dictionary operations
+dictPerson = {"Name": "Eduard", "age": 29}
+
+# add value
+dictPerson["Heigth"] = 183
+dictPerson["IMC"] = 22.2
+
+# print dictionary
+print("Dictionary:", dictPerson)
+
+# print keys
+lKeys = list(dictPerson.keys())
+print("Dictionary keys:", lKeys)
+
+# print values
+print("Print keys and values:")
+for i, v in enumerate(lKeys):
+    j = i
+    if i >= 2:
+        j += 10
+    print('\t{0:<5} | {1:<10} | {2:<15}'.format(j, v, dictPerson[v]))
+#print("values:", a[list(a.keys())[0]])
