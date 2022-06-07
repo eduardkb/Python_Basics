@@ -1,102 +1,92 @@
--- INITIALIZE GIT PROJECT
-	init git
+====================================================================================
+-- gemeral commands
+	$ git status
+	$ git log
+	$ git diff --color-words
 
--- REPO STATUS
-	git status
-
--- ADD FILES TO GIT
-	git add .
+-- configure git
+	- get all settings
+	$ git config --list --show-origin
 	
--- COMMIT ADDED FILES AND CHANGES
-	git commit -m "initial commit"
+	- configure git ID
+	$ git config --global user.name "eduardkb"
+	$ git config --global user.email eduardbuhali@gmail.com
+	
+-- create a new project
+	- create project in git site
+	- create folder on local and dir into it
+	$ git init
+	- add .gitignore file if needed
+	$ git add .
+	$ git commit -m "first commit"
+	$ git branch -M main
+	$ git remote add origin https://github.com/eduardkb/test.git
+	$ git push -u origin main
+	
+-- setup secondary location
+	- create folder on local and dir into it
+	$ git init
+	$ git remote add origin https://github.com/eduardkb/<REPO_NAME>.git
+	$ git pull origin main
+	
+-- commit changed files
+	$ git add .
+	$ git commit -m "first commit"
+	$ git push -u origin main	
 
--- VIEW ALL COMMIT LOGS
-	git log
-	git log -n 5 				# shows only the last 5 updates
-	git log --since=2020-01-01	# shows logs only since the date
-	git log --author="eduard"   # searchs for author (does not need to be full author name)
-	git log --grep="Init" 		# searches the commit section with grep (is case sensitive)
+-- download from repository
+	$ git pull origin master
+	
+====================================================================================
+Advanced
+--------
+-- commit all changes directly without staging
+	- option -a (--All) commits all files
+	- new added files will not be committed. 
+	- they need to be added to git first with "git add .".
+	$ commit -am "Commit all changes"
+	
+-- VIEW DIFFERENCE BETWEEN FILES
+	- shows diff only for files in working area
+	$ git diff 			
+	- shows diff only on staged area
+	$ git diff --staged	
+	- show in color only words that changed
+	$ git diff --color-words  
+	
+-- VIEW ALL COMMIT LOGS	
+	$ git log
+	- shows only the last 5 updates
+	$ git log -n 5 				
+	- shows logs only since the date
+	$ git log --since=2020-01-01	
+	- searchs for author (does not need to be full author name)
+	$ git log --author="eduard"   
+	- searches the commit section with grep (is case sensitive)
+	$ git log --grep="Init" 		
 	
 	complex example
 		git log --since=2019-03-01 --until=2019-03-31 --author="Karen" --grep="refactor"
-
--- VIEW DIFFERENCE BETWEEN FILES
-	git diff 			# shows diff only for files in working area
-	git diff --staged	# shows diff only on staged area
-	
-	git diff --color-words  # show in color only words that changed
-	
--- remove file from git
-	git rm file_to_delete2.txt
-	git commit -m "delete file 2"
-	
--- moving file from git
-	git mv 03-ThirdNewFile.py 03-ThirdFile.py
-
--- cancel changes on staging area
-	git restore --staged <file>
-
--- discard changes on workspace
-	git restore <file>
-
--- remove file from staging area (cancel commit) returns file to workarea still changed
-	git reset HEAD <file>
-	
--- commit all changes directly without staging
-	-- option -a (--All) commits all files
-	-- new added files will not be committed. they need to be added to git first.
-	commit -am "Commit all changes"
-	
-
-=====================================================================================
-
-## to upload from linux server to git
-	# prepare git on local:
-		# on the project folder:
-			git init
-		# add ignore file to project
-			.gitignore
-		# add files to git local repo.
-			git add .
-		# commit files in repo
-			git commit -m "FirstCommit"
-	# prepare git to uplade files to git cloud
-		# create remote repo (on git cloud)
-			git remote add origin https://github.com/eduardkb/blog.git
-		# to authenticate on github account
-			generate token from github site
-				profile -> settings -> developer settings -> personal access token
-				generate token
-				give name
-				permissions
-					repo
-					admin:repo_hook
-			generated PAC
-				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
-		# upload files to git
-			git push -u origin master
-				Username: eduardbuhali@gmail.com
-				Password: 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
-
-## to download from server to local dev machine (GitHub COMMAND LINE)
-	# initialize git repo
-		git init
-		git add .
-	# add origin (git cloud)
-		git remote add origin https://github.com/eduardkb/djangoAgenda.git
-	# get all files from origin
-		git pull origin master
-	# check status
-		git status
 		
-## on vscode from server to local dev machine:
-	command line same as above
-	
-	
-## to commit and upload changes
-	git status
-	git add -A
-	git commit -m "Changes for file a"
-	git push origin master
-	
+-- FIX LAST COMMIT MESSAGE
+	$ git commit --amend -m "an updated commit message"
+====================================================================================
+Initialization instructions on GIT
+	…or create a new repository on the command line
+		git init
+		git add README.md
+		git commit -m "first commit"
+		git branch -M main
+		git remote add origin https://github.com/eduardkb/test.git
+		git push -u origin main
+	…or push an existing repository from the command line
+		git remote add origin https://github.com/eduardkb/test.git
+		git branch -M main
+		git push -u origin main
+		
+github delete repo
+	on repository
+	settings icon on the icons bar
+	on general - go to the end of the page
+	delete this repo
 	
