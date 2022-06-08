@@ -36,7 +36,31 @@
 
 -- download from repository
 	$ git pull origin master
+
+====================================================================================
+Checkount and Branches
+----------------------
+
+-- list branches
+	$ git branch
+
+-- change branch
+	$ git checkout main
 	
+-- create new branch and change to it (-b)
+	$ git checkout -b new_branch
+	
+-- merge with main branch
+	- change files
+	$ git commit -am "changes made. mergiing from new_branch"
+	git checkout main
+	git merge new_branch
+	git push origin main
+	
+	
+-- remove branch	
+	git branch -d master
+
 ====================================================================================
 Advanced
 --------
