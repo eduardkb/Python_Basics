@@ -1,5 +1,6 @@
 ====================================================================================
--- gemeral commands
+GENERAL COMMANDS
+----------------
 	$ git status
 	$ git log
 	$ git diff --color-words
@@ -38,8 +39,8 @@
 	$ git pull origin master
 
 ====================================================================================
-Checkount and Branches
-----------------------
+CHECKOUT AND MERGE BRANCHES
+---------------------
 
 -- list branches
 	$ git branch
@@ -62,7 +63,7 @@ Checkount and Branches
 	git branch -d master
 
 ====================================================================================
-Advanced
+ADVANCED
 --------
 -- commit all changes directly without staging
 	- option -a (--All) commits all files
@@ -95,7 +96,8 @@ Advanced
 -- FIX LAST COMMIT MESSAGE
 	$ git commit --amend -m "an updated commit message"
 ====================================================================================
-Initialization instructions on GIT
+INITIALIZATION INSTRUCTIONS ON GIT
+----------------------------------
 	…or create a new repository on the command line
 		git init
 		git add README.md
