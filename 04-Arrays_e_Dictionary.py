@@ -84,6 +84,10 @@ lKeys = list(dictPerson.keys())
 print("Dictionary keys:", lKeys)
 
 # print values
+print("Iterate through Dictionary")
+for key, val in dictPerson.items():
+    print(f'{key} = {val}')
+
 print("Print keys and values:")
 for i, v in enumerate(lKeys):
     j = i
