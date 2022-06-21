@@ -115,4 +115,24 @@ github delete repo
 	settings icon on the icons bar
 	on general - go to the end of the page
 	delete this repo
-	
+
+====================================================================================
+Generate SSH key in Linux to auhenticate with SSH
+
+Generate key:
+    # ssh-keygen -t rsa -b 4096 -C “your_email@domain.com”
+
+get the key
+    # cat /home/<user>/.ssh/id_rsa.pub
+
+add ssh key to github 
+    navigate in github to settings --> SSH and GPG keys
+    New SSH key
+
+test key
+    ssh -T git@github.com
+    (first time write 'yes')
+
+git remote has to be added as:
+    git remote add origin git@github.com:eduardkb/<project>.git
+
