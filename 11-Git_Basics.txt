@@ -117,22 +117,40 @@ github delete repo
 	delete this repo
 
 ====================================================================================
-Generate SSH key in Linux to auhenticate with SSH
+GitHub Configure SSH Certificate on Linux
 
-Generate key:
-    # ssh-keygen -t rsa -b 4096 -C “your_email@domain.com”
+	Generate key:
+		# ssh-keygen -t rsa -b 4096 -C “your_email@domain.com”
 
-get the key
-    # cat /home/<user>/.ssh/id_rsa.pub
+	get the key
+		# cat /home/<user>/.ssh/id_rsa.pub
 
-add ssh key to github 
-    navigate in github to settings --> SSH and GPG keys
-    New SSH key
+	add ssh key to github 
+		navigate in github to settings --> SSH and GPG keys
+		New SSH key
 
-test key
-    ssh -T git@github.com
-    (first time write 'yes')
+	test key
+		ssh -T git@github.com
+		(first time write 'yes')
 
-git remote has to be added as:
-    git remote add origin git@github.com:eduardkb/<project>.git
+	git remote has to be added as:
+		git remote add origin git@github.com:eduardkb/<project>.git
 
+GitHub Configure SSH Certificate on Windows
+	On powershell
+			$ ssh-keygen -o -t rsa -C "eduardbuhali@gmail.com"
+			on path hit enter to accept default .ssh folder
+				ex: C:\Users\Eduard\.ssh
+			type pass
+	on folder .ssh open file *.pub and copy key to clipboard
+		ex. key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDQmSxPRso+4UIeOmM7JxxIHSG+TB2yGzB5D5fDbHgNF2gDyrHJIQBe0+ZpSRpsfLUkYB0A5SJYRxppOkCZGhPeXmkVOL6HJ932GiPNbtxeon4mzrlA9Hpb5DIAQnlKnht0EASX0kfyCfSS4FqcMhb2LZBN546VLs0pzT8guPs9MLsvAyFDG7Yd6YyRb7ihST0MziBvK6eZDJ22yx35QcuGWhXNgEj6m3A+ArugCkLw9ofA768ZQeg32rv5DO4Rn7/oIeNBXl0JGALtb8a2PMZ47vgJejxNP3qubXiFXG9SO9BRXFJ+la4ae5jo2sqcyTm1nQuqKuljEHMW4UfHCEUctJly5looEq6EuZQ2l6DK/3SDa1TwuAYQj4RT42Adc/LV9p6TnkIFW9JxdoFVyTKHJ3IZpdG4GGr8PbTterCrsdusiXHjTrqEcnr5HQEQc1RkHGrE85wvm/BfeRgT+toiz+As2+krjj1kPOtQkmFWHH79a6NYSqwdVnfMxZrdqYE= eduardbuhali@gmail.com
+	put key on github -> settings -> ssh and gpg keys
+	
+	download repo and change branch
+		$ git init
+		$ git remote add origin git@github.com:eduardkb/01.01-Python_Basics.git
+		$ git pull origin main
+		$ git branch
+		$ git checkout main
+		$ git branch -d master
+		$ git status
