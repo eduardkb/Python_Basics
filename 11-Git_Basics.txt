@@ -7,12 +7,14 @@ GENERAL COMMANDS
 
 -- configure git
 	- get all settings
-	$ git config --list --show-origin
+		$ git config --list --show-origin
 	
 	- configure git ID
-	$ git config --global user.name "eduardkb"
-	$ git config --global user.email eduardbuhali@gmail.com
+		$ git config --global user.name "eduardkb"
+		$ git config --global user.email eduardbuhali@gmail.com
 	
+	- configure default branch
+		$ git config --global init.defaultbranch=main
 -- create a new project
 	- create project in git site
 	- create folder on local and dir into it
