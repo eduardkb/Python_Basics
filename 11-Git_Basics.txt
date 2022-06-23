@@ -157,3 +157,10 @@ GitHub Configure SSH Certificate on Windows
 		$ git checkout main
 		$ git branch -d master
 		$ git status
+		
+SSH Certificate problem in Windows
+	temporarily disable ssh verifications
+		$ git config --global http.sslVerify true
+
+	fix ssh problem on windows
+		$ git config --global http.sslbackend schannel
